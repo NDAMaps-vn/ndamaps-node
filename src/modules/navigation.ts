@@ -8,6 +8,8 @@ import type {
   DirectionsResponse,
   DistanceMatrixParams,
   DistanceMatrixResponse,
+  OptimizedRouteParams,
+  OptimizedRouteResponse,
   LatLng,
 } from '../core/types.js'
 
@@ -148,6 +150,49 @@ export class NavigationModule {
     return this.httpClient.get<DistanceMatrixResponse>(
       MAPS_API_BASE,
       '/distancematrix',
+      queryParams,
+    )
+  }
+
+  /**
+   * Tính toán lộ trình tối ưu đa điểm (Optimized Route) đi qua nhiều vị trí.
+   *
+   * @param params - Locations and options
+   * @returns Optimized Route with reordered coordinates and travel summary
+   *
+   * @example
+   * ```typescript
+   * const route = await client.navigation.optimizedRoute({
+   *   locations: [
+   *     { lat: 21.03624, lon: 105.77142 }, // Start
+   *     { lat: 21.03326, lon: 105.78743 }, // Intermediate stop
+   *     { lat: 21.00329, lon: 105.81834 }, // Intermediate stop
+   *     { lat: 21.03624, lon: 105.77142 }  // End
+   *   ]
+   * })
+   *
+   * console.log(route.trip.summary.time)
+   * ```
+   *
+   * @see https://docs.ndamaps.vn/optimized-route
+   */
+  async optimizedRoute(
+    params: OptimizedRouteParams,
+  ): Promise<OptimizedRouteResponse> {
+    const jsonBody = JSON.stringify({
+      locations: params.locations,
+      costing: params.costing ?? 'auto',
+      directions_options: params.directions_options,
+    })
+
+    const queryParams: Record<string, string | number | boolean | undefined> = {
+      json: jsonBody,
+      admin_v2: params.admin_v2,
+    }
+
+    return this.httpClient.get<OptimizedRouteResponse>(
+      MAPS_API_BASE,
+      '/optimized-route',
       queryParams,
     )
   }

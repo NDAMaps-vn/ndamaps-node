@@ -381,6 +381,49 @@ export interface DistanceMatrixResponse {
   warnings: string[]
 }
 
+export interface OptimizedRouteLocation {
+  lat: number | string
+  lon: number | string
+}
+
+export interface OptimizedRouteParams {
+  locations: OptimizedRouteLocation[]
+  costing?: string
+  directions_options?: { units?: 'km' | 'mi' }
+  admin_v2?: boolean
+}
+
+export interface OptimizedRouteResponse {
+  trip: {
+    locations: Array<{
+      type: string
+      lat: number
+      lon: number
+      side_of_street?: string
+      original_index: number
+    }>
+    legs: Array<{
+      maneuvers: any[]
+      summary: any
+      shape: string
+    }>
+    summary: {
+      time: number
+      length: number
+      cost: number
+      min_lat: number
+      min_lon: number
+      max_lat: number
+      max_lon: number
+      status_message: string
+      status: number
+      units: string
+      language: string
+      [key: string]: any
+    }
+  }
+}
+
 // ── Static Map ────────────────────────────────
 
 export interface StaticMapCenterParams {

@@ -104,6 +104,21 @@ describe.skipIf(SKIP)('Integration: Navigation', () => {
     expect(res.sources_to_targets[0][0].distance).toBeGreaterThan(0)
     console.log('  ✔ distanceMatrix:', res.sources_to_targets[0].map(e => `${e.distance}km/${e.time}s`).join(', '))
   })
+
+  it('optimizedRoute → server returns reordered route', async () => {
+    const res = await client!.navigation.optimizedRoute({
+      locations: [
+        { lat: 21.03624, lon: 105.77142 },
+        { lat: 21.03326, lon: 105.78743 },
+        { lat: 21.00329, lon: 105.81834 },
+        { lat: 21.02863, lon: 105.85164 },
+        { lat: 21.03624, lon: 105.77142 }
+      ],
+    })
+    expect(res.trip.locations.length).toBe(5)
+    expect(res.trip.summary.time).toBeGreaterThan(0)
+    console.log('  ✔ optimizedRoute:', res.trip.summary.time, 'seconds')
+  })
 })
 
 // ── Forcodes ──────────────────────────────────
