@@ -123,7 +123,7 @@ const url = client.maps.staticMapUrl({
   retina: true,
   marker: '105.79,21.03|https://example.com/icon.svg',
 })
-// → https://maptiles.openmap.vn/styles/ndamap/static/105.79,21.03,15/600x400@2x.png?marker=...&apikey=...
+// → https://maptiles.ndamaps.vn/styles/ndamap/static/105.79,21.03,15/600x400@2x.png?marker=...&apikey=...
 
 // Area mode (bounding box)
 const url = client.maps.staticMapUrl({

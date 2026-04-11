@@ -36,11 +36,11 @@ export const MAP_TILE_STYLES = {
  *   height: 400,
  *   retina: true,
  * })
- * // → https://maptiles.openmap.vn/styles/ndamap/static/105.79,21.03,15/600x400@2x.png?apikey=...
+ * // → https://maptiles.ndamaps.vn/styles/ndamap/static/105.79,21.03,15/600x400@2x.png?apikey=...
  *
  * // Tile style URL for MapLibre GL
  * const styleUrl = client.maps.styleUrl('day-v1')
- * // → https://maptiles.openmap.vn/styles/day-v1/style.json?apikey=...
+ * // → https://maptiles.ndamaps.vn/styles/day-v1/style.json?apikey=...
  * ```
  */
 export class MapsModule {
