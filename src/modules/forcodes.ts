@@ -68,7 +68,7 @@ export class ForcodesModule {
       resolution: params.resolution,
     }
 
-    return this.httpClient.get<ForcodeEncodeResponse>(
+    return this.httpClient.post<ForcodeEncodeResponse>(
       MAPS_API_BASE,
       '/forcodes/encode',
       queryParams,
@@ -107,7 +107,7 @@ export class ForcodesModule {
       forcodes: params.forcodes,
     }
 
-    const response = await this.httpClient.get<ForcodeDecodeResponse>(
+    const response = await this.httpClient.post<ForcodeDecodeResponse>(
       MAPS_API_BASE,
       '/forcodes/decode',
       queryParams,

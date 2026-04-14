@@ -22,8 +22,6 @@ jobs:
 
     - name: Build
       run: npm run build
-      
-    # Note: Integration tests require NDAMAPS_API_KEY secret 
-    # to be set in the repository secrets or mock tokens.
-    # - name: Run tests
-    #   run: npm run test
+
+    - name: Run unit tests
+      run: npm run test
