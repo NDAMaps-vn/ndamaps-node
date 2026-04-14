@@ -331,12 +331,12 @@ export const handlers = [
   }),
 
   // Forcodes Encode
-  http.get(`${MAPS_API_BASE}/forcodes/encode`, () => {
+  http.post(`${MAPS_API_BASE}/forcodes/encode`, () => {
     return HttpResponse.json(MOCK_RESPONSES.forcodeEncode)
   }),
 
   // Forcodes Decode
-  http.get(`${MAPS_API_BASE}/forcodes/decode`, ({ request }) => {
+  http.post(`${MAPS_API_BASE}/forcodes/decode`, ({ request }) => {
     const url = new URL(request.url)
     const forcodes = url.searchParams.get('forcodes')
     if (forcodes === 'INVALID') {
