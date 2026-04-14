@@ -13,7 +13,7 @@ import {
 export const MAPS_API_BASE = 'https://mapapis.ndamaps.vn/v1'
 
 /** Tile server base URL (Static Map + Tile Styles) */
-export const TILES_BASE = 'https://nda-tiles.openmap.vn'
+export const TILES_BASE = 'https://maptiles.ndamaps.vn'
 
 /** @deprecated Use TILES_BASE instead — both static maps and tile styles share the same base */
 export const MAPTILES_BASE = TILES_BASE

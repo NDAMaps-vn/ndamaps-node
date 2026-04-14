@@ -7,7 +7,7 @@ describe('MapsModule', () => {
   describe('styleUrl()', () => {
     it('day-v1 → correct style.json URL', () => {
       const url = client.maps.styleUrl('day-v1')
-      expect(url).toBe('https://nda-tiles.openmap.vn/styles/day-v1/style.json?apikey=test-key')
+      expect(url).toBe('https://maptiles.ndamaps.vn/styles/day-v1/style.json?apikey=test-key')
     })
 
     it('night-v1 → correct style.json URL', () => {
@@ -46,7 +46,7 @@ describe('MapsModule', () => {
         height: 400,
       })
 
-      expect(url).toContain('nda-tiles.openmap.vn')
+      expect(url).toContain('maptiles.ndamaps.vn')
       expect(url).toContain('/styles/ndamap/static/')
       expect(url).toContain('105.79,21.03,15')
       expect(url).toContain('600x400')
