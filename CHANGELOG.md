@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1](https://github.com/NDAMaps-vn/ndamaps-node/compare/v1.0.0...v1.0.1) (2026-04-14)
+
+
+### Bug Fixes
+
+* **ci:** resolve build failures verified with act ([54e38de](https://github.com/NDAMaps-vn/ndamaps-node/commit/54e38de447f7951647ffae3417999b064f4284d4))
+* **ci:** resolve CI build failures ([7ac5856](https://github.com/NDAMaps-vn/ndamaps-node/commit/7ac58560efe175ec6cd85a979d102c16a7810968))
+* revert TILES_BASE to maptiles.ndamaps.vn + fix CI errors ([2635002](https://github.com/NDAMaps-vn/ndamaps-node/commit/2635002d77a04e0a662f602f279cb109aa3743eb))
+
 ## 1.0.0 (2026-04-11)
 
 
